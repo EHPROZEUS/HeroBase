@@ -3,6 +3,7 @@ import { getAllQuotes } from '../services/firebaseService';
 import { filterQuotesByPeriod } from '../utils/dateUtils';
 import PeriodFilter from './PeriodFilter';
 import FilterTable from './FilterTable';
+import InterventionStats from './InterventionStats';
 import LoadingSpinner from './LoadingSpinner';
 import '../styles/Dashboard.css';
 
@@ -12,6 +13,7 @@ const Dashboard = () => {
   const [error, setError] = useState(null);
   const [period, setPeriod] = useState('');
   const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split('T')[0]);
+  const [viewMode, setViewMode] = useState('stats'); // 'stats' ou 'table'
 
   // Charger les devis au montage du composant
   useEffect(() => {
@@ -70,26 +72,50 @@ const Dashboard = () => {
         <p>Gestion et suivi des filtres automobiles</p>
       </header>
 
-      <div className="stats-cards">
-        <div className="stat-card">
-          <h3>Devis</h3>
-          <p className="stat-value">{stats. total}</p>
-        </div>
-        <div className="stat-card">
-          <h3>Total Filtres</h3>
-          <p className="stat-value">{stats.totalFilters}</p>
-        </div>
+      {/* Toggle entre vues */}
+      <div className="view-toggle">
+        <button
+          className={`toggle-btn ${viewMode === 'stats' ? 'active' : ''}`}
+          onClick={() => setViewMode('stats')}
+        >
+          📊 Statistiques
+        </button>
+        <button
+          className={`toggle-btn ${viewMode === 'table' ? 'active' : ''}`}
+          onClick={() => setViewMode('table')}
+        >
+          📋 Tableau détaillé
+        </button>
       </div>
 
-      <PeriodFilter
-        period={period}
-        setPeriod={setPeriod}
-        selectedDate={selectedDate}
-        setSelectedDate={setSelectedDate}
-        onReset={handleReset}
-      />
+      {viewMode === 'stats' ? (
+        /* Vue Statistiques */
+        <InterventionStats quotes={quotes} />
+      ) : (
+        /* Vue Tableau */
+        <>
+          <div className="stats-cards">
+            <div className="stat-card">
+              <h3>Devis</h3>
+              <p className="stat-value">{stats.total}</p>
+            </div>
+            <div className="stat-card">
+              <h3>Total Filtres</h3>
+              <p className="stat-value">{stats.totalFilters}</p>
+            </div>
+          </div>
 
-      <FilterTable quotes={filteredQuotes} />
+          <PeriodFilter
+            period={period}
+            setPeriod={setPeriod}
+            selectedDate={selectedDate}
+            setSelectedDate={setSelectedDate}
+            onReset={handleReset}
+          />
+
+          <FilterTable quotes={filteredQuotes} />
+        </>
+      )}
     </div>
   );
 };

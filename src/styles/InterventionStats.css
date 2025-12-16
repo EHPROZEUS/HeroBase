@@ -1,0 +1,324 @@
+/* Conteneur principal */
+.intervention-stats {
+  width: 100%;
+}
+
+/* Filtres rapides */
+.quick-filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.quick-filter-btn {
+  padding: 10px 20px;
+  border: 2px solid #e0e0e0;
+  background: white;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+}
+
+.quick-filter-btn:hover {
+  border-color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(102, 126, 234, 0.2);
+}
+
+.quick-filter-btn.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.filter-icon {
+  font-size: 1.2rem;
+}
+
+/* Info période */
+.period-info {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.period-info p {
+  margin: 0;
+  color: #666;
+  font-size: 1rem;
+}
+
+.period-info strong {
+  color: #667eea;
+  font-size: 1.2rem;
+}
+
+/* Vue d'ensemble - Catégories */
+.category-summary {
+  margin-bottom: 40px;
+}
+
+.category-summary h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.category-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.category-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #667eea;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.category-icon {
+  font-size: 2.5rem;
+  opacity: 0.9;
+}
+
+.category-info h3 {
+  margin: 0 0 5px 0;
+  font-size: 0.9rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.category-count {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Interventions détaillées */
+.interventions-section {
+  margin-bottom: 40px;
+}
+
+.interventions-section h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.interventions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.intervention-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #667eea;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s ease;
+}
+
+.intervention-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+.intervention-icon {
+  font-size: 2rem;
+  opacity: 0.9;
+}
+
+.intervention-info h3 {
+  margin: 0 0 5px 0;
+  font-size: 0.9rem;
+  color: #555;
+  font-weight: 600;
+}
+
+.intervention-count {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Section Carrosserie */
+.carrosserie-section {
+  margin-bottom: 40px;
+}
+
+.carrosserie-section h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.carrosserie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.carrosserie-card {
+  background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  border: 2px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.carrosserie-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+  border-color: #667eea;
+}
+
+.carrosserie-icon {
+  font-size: 1.8rem;
+  opacity: 0.8;
+}
+
+.carrosserie-info h3 {
+  margin: 0 0 3px 0;
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.carrosserie-count {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Message pas de stats */
+.no-stats {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.no-stats p {
+  color: #999;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .category-cards {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+  
+  .interventions-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .quick-filters {
+    justify-content: center;
+  }
+
+  .quick-filter-btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .category-cards {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+
+  .category-card {
+    padding: 15px;
+  }
+
+  .category-icon {
+    font-size: 2rem;
+  }
+
+  .category-count {
+    font-size: 1.6rem;
+  }
+
+  .interventions-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+  }
+
+  .intervention-card {
+    padding: 15px;
+  }
+
+  .intervention-icon {
+    font-size: 1.6rem;
+  }
+
+  .intervention-count {
+    font-size: 1.5rem;
+  }
+
+  .carrosserie-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .interventions-section h2,
+  .carrosserie-section h2,
+  .category-summary h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .quick-filters {
+    flex-direction: column;
+  }
+
+  .quick-filter-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .category-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .interventions-grid {
+    grid-template-columns: 1fr;
+  }
+}
