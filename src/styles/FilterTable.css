@@ -1,0 +1,84 @@
+.filter-table-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.filter-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.filter-table thead {
+  background: #f8f9fa;
+}
+
+.filter-table th {
+  padding: 15px 10px;
+  text-align:  left;
+  font-weight:  600;
+  color: #333;
+  border-bottom:  2px solid #e0e0e0;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  background: #f8f9fa;
+  z-index: 10;
+}
+
+.filter-table th:hover {
+  background:  #e9ecef;
+}
+
+.filter-table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #666;
+}
+
+.filter-table tbody tr:hover {
+  background: #f8f9ff;
+}
+
+.filter-table td.has-value {
+  background: #e8f5e9;
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+.filter-table tfoot {
+  background: #f8f9fa;
+  font-size: 1. 1rem;
+}
+
+.totals-row td {
+  padding: 15px 10px;
+  border-top: 3px solid #667eea;
+  color: #333;
+}
+
+.no-data {
+  padding: 40px;
+  text-align:  center;
+  color: #999;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .filter-table {
+    font-size: 0.9rem;
+  }
+  
+  .filter-table th,
+  .filter-table td {
+    padding: 8px 6px;
+  }
+}
